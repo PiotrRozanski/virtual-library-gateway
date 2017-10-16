@@ -1,87 +1,92 @@
-/* ==========================================================================
-Navbar
-========================================================================== */
-.navbar-version {
-    font-size: 10px;
-    color: #ccc
+body {
+    font-family:hind;
 }
 
-.jh-navbar {
-    background-color: #353d47;
-    padding: .2em 1em;
+h1,h2,h3,h4,h5,h6 {
+    font-family:montserrat;
 }
 
-.jh-navbar .profile-image {
-    margin: -10px 0px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+p {
+    font-size:17px;
 }
 
-.jh-navbar .dropdown-item.active, .jh-navbar .dropdown-item.active:focus, .jh-navbar .dropdown-item.active:hover {
-    background-color: #353d47;
+.navbar {
+    border-radius: 0;
+    font-family:montserrat;
+    font-weight:600;
 }
 
-.jh-navbar .dropdown-toggle::after {
-    margin-left: 0.15em;
+.navbar-inverse {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
 }
 
-.jh-navbar ul.navbar-nav {
-    padding: 0.5em;
-}
-
-.jh-navbar .navbar-nav .nav-item {
-    margin-left: 1.5rem;
-}
-
-.jh-navbar a.nav-link {
-    font-weight: 400;
-}
-
-.jh-navbar .jh-navbar-toggler {
-    color: #ccc;
-    font-size: 1.5em;
-    padding: 10px;
-}
-
-.jh-navbar .jh-navbar-toggler:hover {
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
     color: #fff;
 }
 
-@media screen and (min-width: 768px) {
-    .jh-navbar-toggler {
-        display: none;
-    }
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-nav>li>a:hover {
+    background-color:#34495e;
 }
 
-@media screen and (max-width: 992px) {
-    .jh-logo-container {
-        width: 100%;
-    }
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus {
+    background-color: #34495e;
 }
 
-.navbar-title {
-    display: inline-block;
-    vertical-align: middle;
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+    background-color: #34495e;
 }
 
-/* ==========================================================================
-Logo styles
-========================================================================== */
-.navbar-brand.logo {
-    padding: 5px 15px;
+.btn-margin-left {
+    margin-left: 5px;
+}
+.btn-margin-right {
+    margin-right: 10px;
 }
 
-.logo .logo-img {
-    height: 45px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 70px;
+.btn-danger {
+    color: #fff;
+    background-color: #c0392b;
+    border-color: #c0392b;
 }
 
-.logo-img {
-    height: 100%;
-    background: url("../../../content/images/logo-jhipster.png") no-repeat center center;
-    background-size: contain;
-    width: 100%;
+.btn-danger:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-success:hover {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-primary:hover {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.badge-danger {
+    background-color: #e74c3c;
+}
+
+.text-warning {
+    color: #ecba16 !important;
 }

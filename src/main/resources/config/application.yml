@@ -46,13 +46,13 @@ zuul: # those values must be configured depending on the application specific ne
         max-semaphores: 500
 
 # See https://github.com/Netflix/Hystrix/wiki/Configuration
-hystrix:
-    command:
-        default:
-            execution:
-                isolation:
-                    thread:
-                        timeoutInMilliseconds: 10000
+#hystrix:
+#    command:
+#        default:
+#            execution:
+#                isolation:
+#                    thread:
+#                        timeoutInMilliseconds: 10000
 
 management:
     security:
