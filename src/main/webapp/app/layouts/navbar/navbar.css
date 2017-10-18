@@ -7,7 +7,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-    font-size:17px;
+    font-size:10px;
 }
 
 .navbar {
@@ -23,7 +23,7 @@ p {
 
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav>li>a {
-    color: #fff;
+    color: #ffffff;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -47,7 +47,7 @@ p {
     margin-left: 5px;
 }
 .btn-margin-right {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .btn-danger {
