@@ -1,0 +1,25 @@
+<div class="container" *ngFor="let ebook of ebooks">
+    <div class="row carousel-row">
+        <div class="col-sm">
+            <div id="carousel-1" class="carousel slide slide-carousel" data-ride="carousel">
+                <div class="item active">
+                    <img src="{{ebook.imageURL}}" alt="Image">
+                </div>
+            </div>
+            <div>
+                <h4><p>{{ebook.title}}</p></h4>
+                <div class="strike">
+                    <span>{{ebook.authors}}</span>
+                </div>
+                <h6>{{ebook.description  | slice:0:470}}...</h6>
+            </div>
+            <div class="slide-footer">
+                <span class="pull-right buttons">
+                    <button class="btn btn-sm btn-default"><i class="fa fa-fw fa-eye"></i> Read Online</button>
+                    <button class="btn btn-sm btn-primary"><i class="fa fa-fw fa-save"></i> Download</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr class="style">
+</div>
