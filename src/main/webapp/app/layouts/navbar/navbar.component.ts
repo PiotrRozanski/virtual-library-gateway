@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router'
 
 @Component({
     selector: 'jhi-navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnInit {
     options: RequestOptions;
     jsonRespose: Observable<any>;
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private router: Router) {
         this.headers = new Headers(
             {
                 'Access-Control-Allow-Origin': '*'
@@ -24,8 +25,6 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.downloadEbooksFromGoogle(this.options);
-
     }
 
     private downloadEbooksFromGoogle(options: RequestOptions) {
@@ -36,11 +35,14 @@ export class NavbarComponent implements OnInit {
 
     }
 
-    public downloadAllEbooks(options: RequestOptions) {
-        console.log('It\'s works');
+    public async downloadAllEbooks(options: RequestOptions) {
+        Observable.interval(2000).subscribe(() => this.downloadEbooksFromGoogle(options));
         this.http.get('http://localhost:8080/virtuallibrarydropbox/dropbox/download/ebooks', options).subscribe(
-            () => {console.log('Preparing...')},
+            () => {
+                console.log('Preparing...')
+            },
             err => console.log('The books can not be downloaded with Dropbox. Error code: %s, URL: %s', err.status, err.url),
             () => console.log('The files have been successfully downloaded with Dropbox'));
+
     }
 }
