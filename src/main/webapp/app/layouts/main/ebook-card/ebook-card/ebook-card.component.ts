@@ -21,7 +21,7 @@ export class EbookCardComponent implements OnInit {
                 'Access-Control-Allow-Origin': '*'
             }
         );
-        const options = new RequestOptions({headers: headers});
+        const options = new RequestOptions({ headers: headers });
 
         this.getDetailsOfEbooks(options);
     }
