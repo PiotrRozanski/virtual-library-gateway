@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { Router } from '@angular/router'
+import {Component, OnInit} from '@angular/core';
+import {Http, RequestOptions, Headers} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import {Router} from '@angular/router'
 
 @Component({
     selector: 'jhi-navbar',
@@ -11,6 +11,7 @@ import { Router } from '@angular/router'
     ]
 })
 export class NavbarComponent implements OnInit {
+    isEmpty: boolean = true;
     headers: Headers;
     options: RequestOptions;
     jsonRespose: Observable<any>;
@@ -21,7 +22,7 @@ export class NavbarComponent implements OnInit {
                 'Access-Control-Allow-Origin': '*'
             }
         );
-        this.options = new RequestOptions({ headers: this.headers });
+        this.options = new RequestOptions({headers: this.headers});
     }
 
     ngOnInit(): void {
@@ -29,14 +30,23 @@ export class NavbarComponent implements OnInit {
 
     private downloadEbooksFromGoogle(options: RequestOptions) {
         this.http.get('http://localhost:8080/virtuallibrary/google/books/download/details', options).subscribe(
-            () => {console.log('Preparing...') },
+            () => {
+                console.log('Preparing...')
+            },
             err => console.log('The details of books can not be downloaded with Google Books API. Error code: %s, URL: %s', err.status, err.url),
             () => console.log('The details of books have been successfully downloaded with Google Books API'));
 
     }
 
     public async downloadAllEbooks(options: RequestOptions) {
-        Observable.interval(2000).subscribe(() => this.downloadEbooksFromGoogle(options));
+        Observable.interval(2000).subscribe(() => {
+                if (this.isEmpty) {
+                    this.downloadEbooksFromGoogle(options);
+                    this.isEmpty = false
+                }
+            }
+        );
+
         this.http.get('http://localhost:8080/virtuallibrarydropbox/dropbox/download/ebooks', options).subscribe(
             () => {
                 console.log('Preparing...')

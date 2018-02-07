@@ -1,3 +1,6 @@
+<div *ngIf="ebooks.length == 0">
+    <h4><p>No files available for download</p></h4>
+</div>
 <div class="container" *ngFor="let ebook of ebooks">
     <div class="row carousel-row">
         <div class="col-sm">
