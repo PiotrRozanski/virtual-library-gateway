@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
                 if (this.isEmpty) {
                     this.downloadEbooksFromGoogle(options);
                     this.isEmpty = false
+                    location.reload();
                 }
             }
         );
@@ -53,6 +54,5 @@ export class NavbarComponent implements OnInit {
             },
             err => console.log('The books can not be downloaded with Dropbox. Error code: %s, URL: %s', err.status, err.url),
             () => console.log('The files have been successfully downloaded with Dropbox'));
-
     }
 }
