@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Http, RequestOptions, Headers } from '@angular/http';
+import {Component, OnInit} from '@angular/core';
+import {Http, RequestOptions, Headers} from '@angular/http';
 
 import 'rxjs/add/operator/map'
-import { Observable } from 'rxjs/Observable'
-import { EbookCard } from './ebook-card';
+import {Observable} from 'rxjs/Observable'
+import {EbookCard} from './ebook-card';
 
 @Component({
     selector: 'jhi-ebook-card',
@@ -21,7 +21,7 @@ export class EbookCardComponent implements OnInit {
                 'Access-Control-Allow-Origin': '*'
             }
         );
-        const options = new RequestOptions({ headers: headers });
+        const options = new RequestOptions({headers: headers});
 
         this.getDetailsOfEbooks(options);
     }
@@ -36,7 +36,10 @@ export class EbookCardComponent implements OnInit {
                     this.ebooks.push(data);
                 }
             },
-            err => console.log('The books can not be downloaded. Error code: %s, URL: %s', err.status, err.url),
+            err => {
+                console.log('The books can not be downloaded. Error code: %s, URL: %s', err.status, err.url)
+
+            },
             () => console.log('The files have been successfully downloaded'))
     }
 
