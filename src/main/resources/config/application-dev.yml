@@ -33,8 +33,11 @@ spring:
         serialization.indent_output: true
     data:
         mongodb:
-            uri: mongodb://localhost:27017
-            database: VirtualLibraryGateway
+            host: ds229008.mlab.com
+            port: 29008
+            database: mongo
+            username: mongodb
+            password: virtualLibrary197
     mail:
         host: localhost
         port: 25
